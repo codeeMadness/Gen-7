@@ -29,3 +29,6 @@ print(solution.numberCameraPass(s))
 
 s = '>>>.<<<'
 print(solution.numberCameraPass(s))
+
+s = '>.....<'
+print(solution.numberCameraPass(s))
