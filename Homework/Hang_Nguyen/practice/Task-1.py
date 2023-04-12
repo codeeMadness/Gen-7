@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/the-number-of-full-rounds-you-have-played
+
 class Solution:
     def numberOfRounds(self, start, end):
         def getMinutes(s):
