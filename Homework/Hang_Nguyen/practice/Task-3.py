@@ -2,37 +2,28 @@
 
 class Solution:
     def removeTheFive(self, n):
-        # Initializing the last index as zero
-        last_index = 0
-        isNegative = n < 0
-        number = str(n)
-        #iterating each number to find the occurences, \
-        # and to find if the number is greater than the next element \ 
-
-        for num in range(1, len(number)):
-            
-            # Handling [case 1] and [case 2]
-            if number[num-1] == '5':
-                if (int(number[num]) > int(number[num-1])) or (isNegative and int(number[num]) < int(number[num-1])):
-                    return number[:num-1] + number[num:]
-                else:
-                    last_index = num - 1
+        n_str = str(n)
+        position_5 = []
+        for i in range(len(n_str)):
+            if n_str[i] == '5':
+                position_5.append(i)
         
-        # If digit is the last number (last occurence) in the string [case 3]
-        if number[-1] == '5':
-            last_index = len(number) - 1
+        print(position_5)
+        max = float('-inf')
+        for position in position_5:
+            new_num = n_str[:position] + n_str[position+1:]
+            print(new_num)
+            # max = max(max, int(n_str[:position] + n_str[position+1:]))
         
-        # print(number[last_index + 1:])
-
-        res = number[:last_index] + number[last_index + 1:]
-        return "-" + res if isNegative else res
+        return max
+        
 
 
 # TEST CASE
 solution = Solution()
 
-print(solution.removeTheFive(15958))
-print(solution.removeTheFive(-5859))
+# print(solution.removeTheFive(15958))
+# print(solution.removeTheFive(-5859))
 print(solution.removeTheFive(-5000))
-print(solution.removeTheFive(0))
-print(solution.removeTheFive(-1))
+# print(solution.removeTheFive(0))
+# print(solution.removeTheFive(-1))
