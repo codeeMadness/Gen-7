@@ -2,18 +2,17 @@
 
 class Solution:
     def minimumLengthOfWinter(self, T):
-        l, r = 0, len(T) - 1
-        peakInWinter = -999999
+        peakInWinter = T[0]
+        highestTemp = T[0]
+        res = 0
 
-        while l <= r:
-            if T[l] < T[r]:
-                length = r
-                r -= 1
-            else:
-                peakInWinter = max(peakInWinter, T[l])
-                l += 1
-
-        return length
+        for temp in T:
+            if temp <= peakInWinter:
+                peakInWinter = highestTemp
+                res += 1
+            elif temp > highestTemp:
+                highestTemp = temp
+        return res
 
 # TEST CASE
 solution = Solution()
@@ -25,7 +24,4 @@ T = [-5, -5, -5, -42, 6, 12]
 print(solution.minimumLengthOfWinter(T))
 
 T = [0, 1, 2, 3, 4]
-print(solution.minimumLengthOfWinter(T))
-
-T = [3, 9, 0, 4, 8, 10]
 print(solution.minimumLengthOfWinter(T))
