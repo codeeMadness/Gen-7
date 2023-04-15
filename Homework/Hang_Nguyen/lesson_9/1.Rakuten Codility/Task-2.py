@@ -1,7 +1,7 @@
 # https://drive.google.com/file/d/1FbGlgYd0cqLzcd-HI0ecKIPceGlULwDb/view?fbclid=IwAR2DUw7unGezSWCW4G8B5MJNWiGvY8j5u_adecnrxr_m0dqp_HexVcxdhi4
 
 class Solution:
-    def findWinter(self, T):
+    def shortestWinter(self, T):
         res = len(T)
         l, r = 0, len(T) - 1
         highestWinter = T[l]
@@ -27,13 +27,13 @@ class Solution:
 solution = Solution()
 
 T = [5, -2, 3, 8, 6]
-print(solution.findWinter(T))
+print(solution.shortestWinter(T))
 
 T = [-5, -5, -5, -42, 6, 12]
-print(solution.findWinter(T))
+print(solution.shortestWinter(T))
 
 T = [0, 1, 2, 3, 4]
-print(solution.findWinter(T))
+print(solution.shortestWinter(T))
 
 T = [4, 9, 3, 8, 7, 6, 10]
-print(solution.findWinter(T))
+print(solution.shortestWinter(T))
