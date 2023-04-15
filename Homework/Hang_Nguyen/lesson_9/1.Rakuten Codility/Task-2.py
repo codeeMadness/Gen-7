@@ -37,4 +37,3 @@ print(solution.findWinter(T))
 
 T = [4, 9, 3, 8, 7, 6, 10]
 print(solution.findWinter(T))
-
