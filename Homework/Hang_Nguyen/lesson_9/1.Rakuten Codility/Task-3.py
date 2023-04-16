@@ -1,16 +1,24 @@
 # https://drive.google.com/file/d/1FbGlgYd0cqLzcd-HI0ecKIPceGlULwDb/view?fbclid=IwAR2DUw7unGezSWCW4G8B5MJNWiGvY8j5u_adecnrxr_m0dqp_HexVcxdhi4
 
 class Tree:
-    def __init__(self, x = 0 , left = None, right = None):
-        self.x = x
+    def __init__(self, val = 0 , left = None, right = None):
+        self.val = val
         self.left = left
         self.right = right
 
 class Solution:
-    def longestDistinctPath(tree):
-        if not tree:
-            return -1
-        pass
+    def longestDistinctPath(self, root):
+        seen = {}
+
+        def pathLength(node):
+            if node is None or node.val in seen:
+                return len(seen)
+            seen[node.val] = node.val
+            longest = max(pathLength(node.left), pathLength(node.right))
+            del seen[node.val]
+            return longest
+            
+        return pathLength(root)
 
 
 # TEST CASE
