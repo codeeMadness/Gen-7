@@ -1,7 +1,8 @@
 # https://leetcode.com/problems/largest-component-size-by-common-factor/
 class Solution():
     def largestComponentSize(self, nums):
-        return len(nums)
+        # STILL THINKING...
+        pass
 
 # TEST CASE
 solution = Solution()
